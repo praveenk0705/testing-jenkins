@@ -50,6 +50,7 @@
 				<configuration>
 					<imageName>${project.artifactId}</imageName>
 					<dockerDirectory>deployments</dockerDirectory>
+					<dockerHost>unix:///var/run/docker.sock</dockerHost>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
