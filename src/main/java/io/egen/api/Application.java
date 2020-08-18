@@ -9,13 +9,13 @@ import io.egen.api.config.SwaggerConfig;
 import io.egen.api.config.WebConfig;
 
 @SpringBootApplication
-@Import({ WebConfig.class, SwaggerConfig.class })
+@Import({WebConfig.class, SwaggerConfig.class})
 
 public class Application {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 //		 System.setProperty(AbstractEnvironment.ACTIVE_PROFILES_PROPERTY_NAME,
 //		 "prod");
-		SpringApplication.run(Application.class, args);
-	}
+        SpringApplication.run(Application.class, args);
+    }
 }
