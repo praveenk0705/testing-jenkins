@@ -1,3 +1,4 @@
+
 package io.egen.api.controller;
 
 import java.util.List;
@@ -32,6 +33,7 @@ public class UserController {
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Success"),
             @ApiResponse(code = 500, message = "Internal Server Error"),})
     public List<User> findAll() {
+        System.out.println("hi");
         return service.findAll();
     }
 

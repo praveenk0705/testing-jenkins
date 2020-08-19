@@ -11,7 +11,8 @@ public interface UserRepository extends Repository<User, String> {
 
 	public List<User> findAll();
 
-	public Optional<User> findOne(String id);
+	public Optional<User> findById(String id);
+
 
 	public Optional<User> findByEmail(String email);
 

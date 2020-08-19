@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional(readOnly = true)
 	public User findOne(String id) {
-		return repository.findOne(id)
+		return repository.findById(id)
 				.orElseThrow(() -> new NotFoundException("User with id " + id + " does not exist"));
 	}
 
@@ -47,14 +47,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	@Transactional
 	public User update(String id, User user) {
-		repository.findOne(id).orElseThrow(() -> new NotFoundException("User with id " + id + " does not exist"));
+		repository.findById(id).orElseThrow(() -> new NotFoundException("User with id " + id + " does not exist"));
 		return repository.save(user);
 	}
 
 	@Override
 	@Transactional
 	public void delete(String id) {
-		User existing = repository.findOne(id)
+		User existing = repository.findById(id)
 				.orElseThrow(() -> new NotFoundException("User with id " + id + " does not exist"));
 		repository.delete(existing);
 	}
