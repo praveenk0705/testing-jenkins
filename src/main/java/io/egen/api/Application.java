@@ -1,17 +1,15 @@
 package io.egen.api;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration;
-import org.springframework.context.annotation.Import;
-import org.springframework.core.env.AbstractEnvironment;
-
 import io.egen.api.config.SwaggerConfig;
 import io.egen.api.config.WebConfig;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @Import({WebConfig.class, SwaggerConfig.class})
+@Slf4j
 
 public class Application {
 

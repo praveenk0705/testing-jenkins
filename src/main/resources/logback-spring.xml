@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+  <appender name="SERVER_CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <withJansi>true</withJansi>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>
+        %date{"yyyy-MM-dd'T'HH:mm:ss,SSSZ"}-%highlight([%-5level])-[%thread]-[tid=%X{tid},assetId=%X{assetId},assetAlias=%X{assetAlias},authId=%X{authId},isTestUser=%X{isTestUser},realmId=%X{realmId},ip=%X{ip}]-[%cyan(%logger{0})]-[%-4.-4line]-%msg%ex{full}%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <appender name="SERVER_CONSOLE_ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+    <appender-ref ref="SERVER_CONSOLE"/>
+    <includeCallerData>true</includeCallerData>
+  </appender>
+
+  <appender name="OILFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>/home/neo/Desktop/spring_logs/applicationOIL.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- daily rollover. Make sure the path matches the one in the file element or else
+       the rollover logs are placed in the working directory. -->
+      <fileNamePattern>/home/neo/Desktop/spring_logs/applicationOIL_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+
+      <timeBasedFileNamingAndTriggeringPolicy
+              class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <maxFileSize>1MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>%d %-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="io.egen.api" level="INFO" additivity="false">
+    <appender-ref ref="SERVER_CONSOLE_ASYNC"/>
+  </logger>
+
+  <logger name="io.egen.api" level="INFO">
+    <appender-ref ref="OILFILE"/>
+  </logger>
+
+  <root level="INFO">
+    <appender-ref ref="SERVER_CONSOLE_ASYNC"/>
+  </root>
+
+</configuration>

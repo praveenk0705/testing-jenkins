@@ -16,10 +16,12 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping(value = URI.USERS)
 @Api(tags = "users")
+@Slf4j
 public class UserController {
 
     private UserService service;
@@ -33,7 +35,7 @@ public class UserController {
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Success"),
             @ApiResponse(code = 500, message = "Internal Server Error"),})
     public List<User> findAll() {
-        System.out.println("hi");
+        log.info("Find All Users");
         return service.findAll();
     }
 
