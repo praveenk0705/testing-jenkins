@@ -1,4 +1,4 @@
-package io.egen.api.entity;
+package com.pku.api.entity;
 
 import java.util.UUID;
 

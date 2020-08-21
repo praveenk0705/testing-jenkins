@@ -1,4 +1,4 @@
-package io.egen.api.config;
+package com.pku.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

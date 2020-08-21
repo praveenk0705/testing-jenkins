@@ -1,17 +1,17 @@
 
-package io.egen.api.controller;
+package com.pku.api.controller;
 
 import java.util.List;
 
+import com.pku.api.constants.URI;
+import com.pku.api.entity.User;
+import com.pku.api.service.UserService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.egen.api.constants.URI;
-import io.egen.api.entity.User;
-import io.egen.api.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

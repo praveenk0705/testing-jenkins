@@ -1,8 +1,8 @@
-package io.egen.api.service;
+package com.pku.api.service;
 
 import java.util.List;
 
-import io.egen.api.entity.User;
+import com.pku.api.entity.User;
 
 public interface UserService {
 

@@ -1,4 +1,4 @@
-package io.egen.api.constants;
+package com.pku.api.constants;
 
 public final class URI {
 

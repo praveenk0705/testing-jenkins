@@ -1,11 +1,10 @@
-package io.egen.api.repository;
+package com.pku.api.repository;
 
 import java.util.List;
 import java.util.Optional;
 
+import com.pku.api.entity.User;
 import org.springframework.data.repository.Repository;
-
-import io.egen.api.entity.User;
 
 public interface UserRepository extends Repository<User, String> {
 

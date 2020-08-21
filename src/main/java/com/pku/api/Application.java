@@ -1,7 +1,7 @@
-package io.egen.api;
+package com.pku.api;
 
-import io.egen.api.config.SwaggerConfig;
-import io.egen.api.config.WebConfig;
+import com.pku.api.config.SwaggerConfig;
+import com.pku.api.config.WebConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

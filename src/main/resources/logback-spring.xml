@@ -32,11 +32,11 @@
     </encoder>
   </appender>
 
-  <logger name="io.egen.api" level="INFO" additivity="false">
+  <logger name="com.pku.api" level="INFO" additivity="false">
     <appender-ref ref="SERVER_CONSOLE_ASYNC"/>
   </logger>
 
-  <logger name="io.egen.api" level="INFO">
+  <logger name="com.pku.api" level="INFO">
     <appender-ref ref="OILFILE"/>
   </logger>
 
